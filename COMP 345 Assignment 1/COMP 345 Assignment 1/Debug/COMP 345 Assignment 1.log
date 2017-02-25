@@ -1,0 +1,4 @@
+﻿  COMP345A1.cpp
+c:\users\tropi\onedrive\documents\visual studio 2015\projects\comp 345 assignment 1\comp 345 assignment 1\comp345a1.cpp(27): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  COMP 345 Assignment 1.vcxproj -> C:\Users\tropi\onedrive\documents\visual studio 2015\Projects\COMP 345 Assignment 1\Debug\COMP 345 Assignment 1.exe
+  COMP 345 Assignment 1.vcxproj -> C:\Users\tropi\onedrive\documents\visual studio 2015\Projects\COMP 345 Assignment 1\Debug\COMP 345 Assignment 1.pdb (Full PDB)
