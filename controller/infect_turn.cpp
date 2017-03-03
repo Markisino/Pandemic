@@ -15,8 +15,11 @@ auto infect_turn::run(context &ctx, args_t const &args, ostream_t &out) const ->
         auto const infection_rate = ctx.game.get_infection_rate();
         for (int i = 0; i < infection_rate; i++) {
             auto const &city = ctx.decks.remove_from_top(infection_deck);
+            ctx.decks.add_to_top(discard_deck, city);
             auto const &color = ctx.cities.get_color(city);
-            if (ctx.game.discovered_cure(color)) {
+            // TODO handle eradicated diseases (not just cured)
+            if (ctx.cities.get_cube_count(city, color) == 3) {
+                // TODO handle outbreak
                 break;
             }
             ctx.cities.add_cube(city, color, 1);

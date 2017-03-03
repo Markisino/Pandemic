@@ -11,6 +11,7 @@
 #include "controller/end_turn.h"
 #include "controller/editor/add_player.h"
 #include "controller/editor/create_deck.h"
+#include "controller/infect_turn.h"
 #include <iomanip>
 #include <sstream>
 #include <fstream>
@@ -35,6 +36,7 @@ application::application(std::istream &in, std::ostream &out) :
     insert_controller<end_turn>();
     insert_controller<add_player>();
     insert_controller<create_deck>();
+    insert_controller<infect_turn>();
 };
 
 auto application::help() -> void {
