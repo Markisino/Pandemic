@@ -11,6 +11,7 @@
 #include "controller/end_turn.h"
 #include "controller/editor/add_player.h"
 #include "controller/editor/create_deck.h"
+#include "controller/editor/shuffle_deck.h"		// Added the path for shuffle_deck controller
 #include <iomanip>
 #include <sstream>
 #include <fstream>
