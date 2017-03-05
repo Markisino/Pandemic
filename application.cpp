@@ -36,6 +36,7 @@ application::application(std::istream &in, std::ostream &out) :
     insert_controller<end_turn>();
     insert_controller<add_player>();
     insert_controller<create_deck>();
+    insert_controller<shuffle_deck>();
 };
 
 auto application::help() -> void {
