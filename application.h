@@ -8,6 +8,7 @@
 #include <unordered_map>
 #include <vector>
 #include "command.h"
+#include "observer/map_view.h"
 
 // application handles user input and output.
 struct application {
@@ -62,6 +63,7 @@ private:
 	std::unordered_map<std::string, std::unique_ptr<command>> commands;
 	std::unordered_multimap<std::string, std::string> category_commands;
 	std::vector<std::string> command_history;
+	map_view mv;
 };
 
 #endif //PANDEMIC_APPLICATION_H

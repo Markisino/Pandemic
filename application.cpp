@@ -40,7 +40,8 @@ application::application(std::istream &in, std::ostream &out) :
 		out{out},
 		ctx{},
 		commands{},
-		command_history{} {
+		command_history{},
+		mv{ctx} {
 	insert_command<reference_card>("view");
 	insert_command<status>("view");
 	insert_command<cities>("view");

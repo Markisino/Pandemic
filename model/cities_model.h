@@ -2,11 +2,12 @@
 #define PANDEMIC_CITIES_MODEL_H
 
 #include "../handle.h"
+#include "../observer/subject.h"
 #include <set>
 #include <map>
 
 // map represents a PANDEMIC map.
-class cities_model {
+class cities_model : public subject {
 	using connected_cities_type = std::set<handle>;
 
 	struct city {
@@ -33,10 +34,12 @@ public:
 				{"blue"_h, 0},
 				{"red"_h, 0},
 		}});
+		notify();
 	}
 
 	inline auto connect_city(handle name, handle connection) -> void {
 		cities.at(name).connected_cities.insert(connection);
+		notify();
 	}
 
 	inline auto get_color(handle name) const -> handle {
@@ -49,10 +52,12 @@ public:
 
 	inline auto place_research_station(handle name) -> void {
 		cities.at(name).has_research_station = true;
+		notify();
 	}
 
 	inline auto remove_research_station(handle name) -> void {
 		cities.at(name).has_research_station = false;
+		notify();
 	}
 
 	inline auto get_cube_count(handle name, handle color) const -> int {
@@ -61,10 +66,12 @@ public:
 
 	inline auto add_cube(handle name, handle color, int count = 1) -> void {
 		cities.at(name).cube_count.at(color) += count;
+		notify();
 	}
 
 	inline auto remove_cube(handle name, handle color, int count = 1) -> void {
 		cities.at(name).cube_count.at(color) -= count;
+		notify();
 	}
 
 	inline auto begin() const -> cities_const_iterator {
