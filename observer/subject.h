@@ -7,11 +7,11 @@
 struct subject {
 	virtual inline ~subject() {}
 
-	virtual inline auto attach(observer *const o) -> void {
+	virtual inline auto attach(observer * o) -> void {
 		observers.push_back(o);
 	}
 
-	virtual inline auto detach(observer *const o) -> void {
+	virtual inline auto detach(observer * o) -> void {
 		observers.remove(o);
 	}
 
@@ -22,7 +22,7 @@ struct subject {
 	}
 
 private:
-	std::list<observer *const> observers;
+	std::list<observer *> observers;
 };
 
 #endif //PANDEMIC_SUBJECT_H
