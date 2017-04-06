@@ -74,7 +74,7 @@ set(SOURCE_FILES
 		controller/action/discover_cure.h
 		controller/action/discover_cure.cpp
 		controller/editor/validate_city_connections.cpp
-		controller/editor/validate_city_connections.h)
+		controller/editor/validate_city_connections.h controller/builder.h)
 add_executable(pandemic ${SOURCE_FILES})
 
 set_property(DIRECTORY PROPERTY VS_STARTUP_PROJECT pandemic)

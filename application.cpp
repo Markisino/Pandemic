@@ -30,6 +30,7 @@
 #include "controller/action/share_knowledge_from.h"
 #include "controller/action/discover_cure.h"
 #include "controller/editor/validate_city_connections.h"
+#include "controller/builder.h"
 #include <iomanip>
 #include <fstream>
 #include <sstream>
@@ -72,6 +73,8 @@ application::application(std::istream &in, std::ostream &out) :
 	insert_command<share_knowledge_from>("action");
 	insert_command<discover_cure>("action");
 	insert_command<validate_city_connections>("setup");
+	insert_command<save_command>("assignment");
+	insert_command<load_command>("assignment");
 };
 
 auto application::help() -> void {
